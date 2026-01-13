@@ -36,7 +36,7 @@ function Notification() {
         }}
         action={(
           <Button key="undo" variant="contained" className={classes.button} onClick={handleClose}>
-            {t('accept')}
+            Accept
           </Button>
         )}
       />

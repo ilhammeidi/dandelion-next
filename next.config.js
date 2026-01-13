@@ -3,7 +3,7 @@ const withImages = require('next-images');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = withImages({
-  // output: 'export', // Please disable/comment for SSR Mode
+  output: 'export', // Please disable/comment for SSR Mode
   trailingSlash: true,
   images: {
     disableStaticImages: true

@@ -2,6 +2,7 @@ import { makeStyles } from 'tss-react/mui';
 
 const counterStyles = makeStyles({ uniqId: 'counter' })((theme, _params, classes) => ({
   counterWrap: {
+    position: 'relative',
     background: theme.palette.primary.main,
     padding: theme.spacing(8, 0)
   },
