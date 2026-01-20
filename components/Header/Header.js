@@ -7,7 +7,7 @@ import Container from '@mui/material/Container';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import Scrollspy from 'react-scrollspy';
+// import Scrollspy from 'react-scrollspy';
 import Link from '../Link';
 import Settings from './Settings';
 import MobileMenu from './MobileMenu';
@@ -90,10 +90,7 @@ function Header(props) {
                 <img src={logo} alt="logo" />
               </AnchorLink>
               {isDesktop && (
-                <Scrollspy
-                  items={navMenu}
-                  currentClassName="active"
-                >
+                <ul>
                   { menuList.map(item => (
                     <li key={item.id.toString()}>
                       {invert ? (
@@ -110,7 +107,7 @@ function Header(props) {
                   <li>
                     <Button href="#">Contact</Button>
                   </li>
-                </Scrollspy>
+                </ul>
               )}
             </nav>
             <nav className={classes.userMenu}>

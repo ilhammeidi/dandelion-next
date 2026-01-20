@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import Slider from 'dandelion-animated-slider';
+// import Slider from 'dandelion-animated-slider';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import useStyles from './slider-style';
@@ -34,41 +34,37 @@ function AnimateSlider() {
   const { classes } = useStyles();
   return (
     <div className={classes.heroContent}>
-      <Slider className="slider-wrapper">
-        {content.map((item, index) => (
-          <div
-            key={index.toString()}
-            className="slider-content"
-            style={{ background: `url('${item.image}') no-repeat center center` }}
-          >
-            <div className="inner">
-              <Typography variant="h1">{item.title}</Typography>
-              <Typography variant="body1">starter-landing.description_text</Typography>
-              <div className={classes.heroButtons}>
-                <Grid container spacing={2} justifyContent="center">
-                  <Grid item>
-                    <Button variant="contained" color="primary">
-                      Main call to action
-                    </Button>
-                  </Grid>
-                  <Grid item>
-                    <Button variant="outlined" color="primary">
-                      Secondary action
-                    </Button>
-                  </Grid>
-                </Grid>
-              </div>
-            </div>
-            <section>
-              <img src={item.userProfile} alt={item.user} />
-              <span>
-                Posted by&nbsp;
-                <strong>{item.user}</strong>
-              </span>
-            </section>
+      <div
+        key={index.toString()}
+        className="slider-content"
+        style={{ background: `url('${item.image}') no-repeat center center` }}
+      >
+        <div className="inner">
+          <Typography variant="h1">{item.title}</Typography>
+          <Typography variant="body1">starter-landing.description_text</Typography>
+          <div className={classes.heroButtons}>
+            <Grid container spacing={2} justifyContent="center">
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Main call to action
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="outlined" color="primary">
+                  Secondary action
+                </Button>
+              </Grid>
+            </Grid>
           </div>
-        ))}
-      </Slider>
+        </div>
+        <section>
+          <img src={item.userProfile} alt={item.user} />
+          <span>
+            Posted by&nbsp;
+            <strong>{item.user}</strong>
+          </span>
+        </section>
+      </div>
     </div>
   );
 }

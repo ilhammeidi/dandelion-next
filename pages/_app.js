@@ -11,7 +11,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import LoadingBar from 'react-top-loading-bar';
 import appTheme from '../theme/appTheme';
 /* import css vendors */
-import 'dandelion-animated-slider/build/horizontal.css';
+// import 'dandelion-animated-slider/build/horizontal.css';
 import 'animate.css/animate.css';
 import 'vendors/hamburger-menu.css';
 import 'vendors/animate-slider.css';

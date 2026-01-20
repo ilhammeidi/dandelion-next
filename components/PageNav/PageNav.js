@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import Scrollspy from 'react-scrollspy';
+// import Scrollspy from 'react-scrollspy';
 import Fab from '@mui/material/Fab';
 import ArrowIcon from '@mui/icons-material/ArrowUpward';
 import Tooltip from '@mui/material/Tooltip';
@@ -45,7 +45,7 @@ function PageNav() {
   return (
     <div className={cx(classes.pageNav, show && classes.show)}>
       <nav className={classes.sectionNav}>
-        <Scrollspy
+        <ul
           items={navMenu}
           currentClassName="active"
         >
@@ -68,7 +68,7 @@ function PageNav() {
               </Tooltip>
             </li>
           )) }
-        </Scrollspy>
+        </ul>
       </nav>
       <Tooltip
         title="To Top"

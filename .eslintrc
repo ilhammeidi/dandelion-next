@@ -1,6 +1,5 @@
 {
   "extends": [
-    "eslint-config-airbnb",
     "plugin:flowtype/recommended",
   ],
   "parserOptions": {
