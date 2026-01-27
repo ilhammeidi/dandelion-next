@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import clsx from 'clsx';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
@@ -40,14 +43,10 @@ function Footer(props) {
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-  // Translation Function
-  const { t } = useTranslation('common');
-
   const { classes } = useStyles();
-  const { classes: align } = useTextAlign();
 
   return (
-    <Container maxWidth="lg" component="footer" className={classes.footer}>
+    <Container maxWidth="lg" component="footer" className={clsx(classes.footer, classes.secondClass)}>
       <h2>Hello Footer</h2>
       {isMobile && (
         <div className={align.textCenter}>

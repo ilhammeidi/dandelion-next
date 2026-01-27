@@ -5,6 +5,7 @@ const footerStyles = makeStyles({ uniqId: 'footer' })((theme, _params, classes) 
     margin: theme.spacing(1, 1.5),
   },
   footer: {
+    border: `2px solid ${theme.palette.secondary.main}`,
     position: 'relative',
     marginTop: theme.spacing(8),
     paddingTop: theme.spacing(3),
@@ -31,6 +32,9 @@ const footerStyles = makeStyles({ uniqId: 'footer' })((theme, _params, classes) 
         textAlign: 'center'
       }
     }
+  },
+  secondClass: {
+    background: theme.palette.primary.light,
   },
   title: {
     color: theme.palette.mode === 'dark' ? theme.palette.primary.light : theme.palette.primary.dark,
