@@ -11,7 +11,7 @@ import useStyles from './footer-style';
 
 function Copyright() {
   return (
-    <Typography variant="body2" display="block" color="textSecondary">
+      <Typography  variant="body2" display="block" color="textSecondary">
       &copy;&nbsp;
       {brand.starter.footerText}
     </Typography>

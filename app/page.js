@@ -1,27 +1,27 @@
 'use client';
-
+import React from 'react';
 import Image from "next/image";
 import Container from '@mui/material/Container';
 import Footer from '@/components/Footer/Footer';
-import styles from "./page.module.css";
+import styles from "./page.module.css"
 
 export default function Home() {
   function handleClick() { 
-    console.log("Tombol telah diklik2!" )
+    console.log("Tombol telah diklik2!" );
   };
   
-  return (
+    return (
     <div className={styles.page}>
       <main className={styles.main}>
         <Container maxWidth="sm">
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js logo"
-            width={100}
-            height={20}
-            priority
-          />
+            <Image
+              className={styles.logo}
+              src="/next.svg"
+              alt="Next.js logo"
+              width={100}
+              height={20}
+              priority
+            />
           <div className={styles.intro}>
             <h1>Kocak To get started, edit the page.js file.</h1>
             <button onClick={() => handleClick()}>
