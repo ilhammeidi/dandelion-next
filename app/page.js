@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useColorScheme } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import Footer from '@/components/Footer/Footer';
+import DarkModeSwitch from '@/components/Header/DarkModeSwitch';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -42,6 +43,7 @@ export default function Home() {
             <button onClick={() => handleClick()}>
               Klik Saya
             </button>
+            <DarkModeSwitch />
             <button onClick={() => toggleDarkTheme()}>
               Dark Mode Togglexxx
             </button>

@@ -1,14 +1,15 @@
 'use client';
 
-import React, { useMemo, useContext, useCallback, createContext } from 'react';
+import React, { useContext, useCallback, createContext } from 'react';
 import PropTypes from 'prop-types';
-import { useColorScheme, createTheme } from '@mui/material/styles';
+import { useColorScheme } from '@mui/material/styles';
+import ThemeProviderWrapper from '@/theme/ThemeProvider';
 // import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v16-appRouter';
 import { NextAppDirEmotionCacheProvider } from 'tss-react/next/appDir';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { TssCacheProvider } from 'tss-react';
-import { ThemeProvider, CssBaseline } from '@mui/material';
+// import { ThemeProvider, CssBaseline } from '@mui/material';
 // import theme from '../theme/theme';
 import './globals.css';
 
@@ -45,19 +46,19 @@ export default function RootLayout({ children }) {
   //   }}
   // ),[setMode]);
 
-  const theme = useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode: 'dark',
-        },
-      }),
-    [],
-  );
+  // const theme = useMemo(
+  //   () =>
+  //     createTheme({
+  //       palette: {
+  //         mode: 'dark',
+  //       },
+  //     }),
+  //   [],
+  // );
 
   return (
     <html lang='en'>
-      <AppThemeContext.Provider value={null}>
+      <ThemeProviderWrapper>
         <NextAppDirEmotionCacheProvider
           options={{ key: 'mui' }}
         >
@@ -66,18 +67,16 @@ export default function RootLayout({ children }) {
             CacheProvider={TssCacheProvider}
           >
             <AppRouterCacheProvider options={{enableCssLayer: false}}>
-              <ThemeProvider theme={theme}>
-                <body className={`${geistSans.variable} ${geistMono.variable}`}>
-                  <button onClick={() => toggleDarkTheme()}>
-                    Dark Mode Togglexxx
-                  </button>
-                  {children}
-                </body>
-              </ThemeProvider>
+              <body className={`${geistSans.variable} ${geistMono.variable}`}>
+                <button onClick={() => toggleDarkTheme()}>
+                  Dark Mode Togglexxx
+                </button>
+                {children}
+              </body>
             </AppRouterCacheProvider>
           </NextAppDirEmotionCacheProvider>
         </NextAppDirEmotionCacheProvider>
-      </AppThemeContext.Provider>
+      </ThemeProviderWrapper>
     </html>
   );
 }
