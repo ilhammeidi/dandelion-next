@@ -1,6 +1,6 @@
 import js from "@eslint/js";
 import globals from "globals";
-import stylistic from '@stylistic/eslint-plugin';
+import stylistic from "@stylistic/eslint-plugin";
 import pluginReact from "eslint-plugin-react";
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
@@ -8,35 +8,42 @@ import nextVitals from "eslint-config-next/core-web-vitals";
 const eslintConfig = defineConfig([
   ...nextVitals,
   // Override default ignores of eslint-config-next.
-  { files: ["**/*.{js,mjs,cjs,jsx}"], plugins: { js }, extends: ["js/recommended"], languageOptions: { globals: globals.browser } },
+  { 
+    files: ["**/*.{js,mjs,cjs,jsx}"],
+    plugins: { js },
+    extends: ["js/recommended"],
+    languageOptions: { globals: globals.browser }
+},
   globalIgnores([
     // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "*.json",
+    "*.mjs",
   ]),
   pluginReact.configs.flat.recommended,
   {
     plugins: {
-      '@stylistic': stylistic
+      "@stylistic": stylistic
     },
     rules: {
       "indent": [
-          "error",
-          2
+        "error",
+        2
       ],
       "linebreak-style": [
-          "error",
-          "unix"
+        "error",
+        "unix"
       ],
       "quotes": [
-          "error",
-          "single"
+        "error",
+        "single"
       ],
       "semi": [
-          "error",
-          "always"
+        "error",
+        "always"
       ],
       "template-curly-spacing" : "off",
       "no-nested-ternary": 0,
@@ -71,10 +78,11 @@ const eslintConfig = defineConfig([
       "jsx-a11y/anchor-is-valid": 0,
       "react/default-props-match-prop-types": 0,
       "arrow-parens": 0,
+      "react/jsx-equals-spacing": [2, "never"],
       "jsx-a11y/label-has-for": [ 2, {
-          "required": {
-              "every": [ "id" ]
-          },
+        "required": {
+          "every": [ "id" ]
+        },
       }],
     }
   }
