@@ -1,6 +1,8 @@
 'use client';
-import React from 'react';
+
+import React, { useCallback } from 'react';
 import Image from 'next/image';
+import { useColorScheme } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import Footer from '@/components/Footer/Footer';
 import styles from './page.module.css';
@@ -9,7 +11,20 @@ export default function Home() {
   function handleClick() { 
     console.log('Tombol telah diklik2');
   };
+
+  const { mode, setMode } = useColorScheme();
   
+  const toggleDarkTheme = useCallback(() => {
+    if(mode){
+      const currMode = mode === 'dark' ? 'light' : 'dark';
+      setMode(currMode);
+    }
+  },[mode, setMode]);
+
+  // function setupDarkModeToggle() {
+  //   setMode(mode === 'light' ? 'dark' : 'light');
+  // }
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -26,6 +41,9 @@ export default function Home() {
             <h1>Kocak To get started, edit the page.js file.</h1>
             <button onClick={() => handleClick()}>
               Klik Saya
+            </button>
+            <button onClick={() => toggleDarkTheme()}>
+              Dark Mode Togglexxx
             </button>
             <p>
               Looking for a starting point or more instructions? Head over to{' '}
