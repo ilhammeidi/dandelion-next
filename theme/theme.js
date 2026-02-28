@@ -20,6 +20,13 @@ export function getTheme(mode) {
           paper: '#1e1e1e',
         },
       }),
+      primary: {
+        main: '#00a724',
+        light: '#c2ffcf',
+      },
+      secondary: {
+        main: '#DC004E',
+      },
     },
   });
 }

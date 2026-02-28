@@ -18,8 +18,7 @@ export default function ThemeProviderWrapper({ children }) {
       toggleColorMode: () => {
         setMode((prev) => (prev === 'light' ? 'dark' : 'light'));
       },
-    }),
-    []
+    }), []
   );
 
   const theme = useMemo(() => getTheme(mode), [mode]);
