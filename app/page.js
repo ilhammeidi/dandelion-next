@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useCallback } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { useColorScheme } from '@mui/material/styles';
+// import { useColorScheme } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import Footer from '@/components/Footer/Footer';
 import DarkModeSwitch from '@/components/Header/DarkModeSwitch';
+import ColorPaletteSwitch from '@/components/Header/ColorPaletteSwitch';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -13,18 +14,22 @@ export default function Home() {
     console.log('Tombol telah diklik2');
   };
 
-  const { mode, setMode } = useColorScheme();
+  // const { mode, setMode } = useColorScheme();
+  // const { colorScheme, setColorScheme } = useColorScheme();
   
-  const toggleDarkTheme = useCallback(() => {
-    if(mode){
-      const currMode = mode === 'dark' ? 'light' : 'dark';
-      setMode(currMode);
-    }
-  },[mode, setMode]);
+  // const toggleDarkTheme = useCallback(() => {
+  //   if(mode){
+  //     const currMode = mode === 'dark' ? 'light' : 'dark';
+  //     setMode(currMode);
+  //   }
+  // },[mode, setMode]);
 
-  // function setupDarkModeToggle() {
-  //   setMode(mode === 'light' ? 'dark' : 'light');
-  // }
+  // const changeColorScheme = useCallback((event) => {
+  //   if(colorScheme) {
+  //     const selectedColor = event.target.value;
+  //     setColorScheme(selectedColor);
+  //   }
+  // }, [colorScheme, setColorScheme]);
 
   return (
     <div className={styles.page}>
@@ -44,9 +49,7 @@ export default function Home() {
               Klik Saya
             </button>
             <DarkModeSwitch />
-            <button onClick={() => toggleDarkTheme()}>
-              Dark Mode Togglexxx
-            </button>
+            <ColorPaletteSwitch />
             <p>
               Looking for a starting point or more instructions? Head over to{' '}
               <a

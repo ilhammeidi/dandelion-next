@@ -40,22 +40,6 @@ export default function RootLayout({ children }) {
     }
   },[mode, setMode]);
 
-  // const colorMode = useMemo(() => ({
-  //   toggleColorMode: () => {
-  //     setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-  //   }}
-  // ),[setMode]);
-
-  // const theme = useMemo(
-  //   () =>
-  //     createTheme({
-  //       palette: {
-  //         mode: 'dark',
-  //       },
-  //     }),
-  //   [],
-  // );
-
   return (
     <html lang='en'>
       <ThemeProviderWrapper>

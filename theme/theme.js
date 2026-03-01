@@ -1,16 +1,7 @@
 'use client';
 import { createTheme } from '@mui/material/styles';
 
-// const theme = createTheme({
-//   colorSchemes: {
-//     dark: true,
-//   },
-//   typography: {
-//     fontFamily: 'var(--font-roboto)',
-//   },
-// });
-
-export function getTheme(mode) {
+export function getTheme(mode, palette) {
   return createTheme({
     palette: {
       mode,
@@ -20,14 +11,8 @@ export function getTheme(mode) {
           paper: '#1e1e1e',
         },
       }),
-      primary: {
-        main: '#00a724',
-        light: '#c2ffcf',
-      },
-      secondary: {
-        main: '#DC004E',
-      },
-    },
+      ...palette
+    }
   });
 }
 
