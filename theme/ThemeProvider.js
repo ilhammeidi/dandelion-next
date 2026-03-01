@@ -34,15 +34,8 @@ export const colorPalette = {
 
 export default function ThemeProviderWrapper({ children }) {
   const [mode, setMode] = useState('light');
-  const [palette, setPalette] = useState({
-    primary: {
-      main: '#00a724',
-      light: '#c2ffcf',
-    },
-    secondary: {
-      main: '#DC004E',
-    },
-  });
+
+  const [palette, setPalette] = useState(colorPalette.oceanBlue);
   
   const theme = useMemo(() => getTheme(mode, palette), [mode, palette]);
   

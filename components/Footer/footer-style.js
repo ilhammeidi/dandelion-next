@@ -130,6 +130,9 @@ const footerStyles = makeStyles({ uniqId: 'footer' })((theme, _params, classes) 
   },
   accordionIcon: {
     padding: 0
+  },
+  checkIcon: {
+    marginRight: theme.spacing(10)
   }
 }));
 

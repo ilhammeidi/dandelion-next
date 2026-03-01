@@ -22,6 +22,10 @@
   padding: 120px 60px;
 }
 
+.checkIcon {
+  margin-right: 20px
+}
+
 .intro {
   display: flex;
   flex-direction: column;

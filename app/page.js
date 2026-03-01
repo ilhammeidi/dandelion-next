@@ -2,8 +2,10 @@
 
 import React from 'react';
 import Image from 'next/image';
-// import { useColorScheme } from '@mui/material/styles';
+import Alert from '@mui/material/Alert';
+import CheckIcon from '@mui/icons-material/Check';
 import Container from '@mui/material/Container';
+import TextField from '@mui/material/TextField';
 import Footer from '@/components/Footer/Footer';
 import DarkModeSwitch from '@/components/Header/DarkModeSwitch';
 import ColorPaletteSwitch from '@/components/Header/ColorPaletteSwitch';
@@ -13,23 +15,6 @@ export default function Home() {
   function handleClick() { 
     console.log('Tombol telah diklik2');
   };
-
-  // const { mode, setMode } = useColorScheme();
-  // const { colorScheme, setColorScheme } = useColorScheme();
-  
-  // const toggleDarkTheme = useCallback(() => {
-  //   if(mode){
-  //     const currMode = mode === 'dark' ? 'light' : 'dark';
-  //     setMode(currMode);
-  //   }
-  // },[mode, setMode]);
-
-  // const changeColorScheme = useCallback((event) => {
-  //   if(colorScheme) {
-  //     const selectedColor = event.target.value;
-  //     setColorScheme(selectedColor);
-  //   }
-  // }, [colorScheme, setColorScheme]);
 
   return (
     <div className={styles.page}>
@@ -45,6 +30,10 @@ export default function Home() {
           />
           <div className={styles.intro}>
             <h1>Kocak To get started, edit the page.js file.</h1>
+            <TextField label="Enter text" variant="outlined" fullWidth />
+            <Alert icon={<CheckIcon fontSize="inherit" className={styles.checkIcon} />} severity="success">
+              Here is a gentle confirmation that your action was successful.
+            </Alert>
             <button onClick={() => handleClick()}>
               Klik Saya
             </button>

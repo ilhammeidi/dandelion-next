@@ -3,6 +3,7 @@ import { createTheme } from '@mui/material/styles';
 
 export function getTheme(mode, palette) {
   return createTheme({
+    direction: 'rtl',
     palette: {
       mode,
       ...(mode === 'dark' && {
