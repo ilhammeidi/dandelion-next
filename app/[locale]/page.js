@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import {useTranslations} from 'next-intl';
 import Alert from '@mui/material/Alert';
 import CheckIcon from '@mui/icons-material/Check';
 import Container from '@mui/material/Container';
@@ -9,9 +10,12 @@ import TextField from '@mui/material/TextField';
 import Footer from '@/components/Footer/Footer';
 import DarkModeSwitch from '@/components/Header/DarkModeSwitch';
 import ColorPaletteSwitch from '@/components/Header/ColorPaletteSwitch';
-import styles from './page.module.css';
+import LangSwitch from '@/components/Header/LangSwitch';
+import styles from '../page.module.css';
 
 export default function Home() {
+  const t = useTranslations('HomePage');
+
   function handleClick() { 
     console.log('Tombol telah diklik2');
   };
@@ -29,6 +33,8 @@ export default function Home() {
             priority
           />
           <div className={styles.intro}>
+            <h1>{t('title')}</h1>
+            <LangSwitch />
             <h1>Kocak To get started, edit the page.js file.</h1>
             <TextField label="Enter text" variant="outlined" fullWidth />
             <Alert icon={<CheckIcon fontSize="inherit" className={styles.checkIcon} />} severity="success">

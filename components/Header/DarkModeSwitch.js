@@ -5,7 +5,7 @@ import { IconButton } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
-import { ColorModeContext } from '@/theme/ThemeProvider';
+import { ColorModeContext } from '@/theme/ThemeWrapper';
 
 export default function DarkModeSwitch() {
   const theme = useTheme();

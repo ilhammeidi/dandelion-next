@@ -3,7 +3,7 @@
 import React, { Fragment, useContext } from 'react';
 import { Button } from '@mui/material';
 // import { useTheme } from '@mui/material/styles';
-import { ColorModeContext } from '@/theme/ThemeProvider';
+import { ColorModeContext } from '@/theme/ThemeWrapper';
 
 export default function ColorPaletteSwitch() {
   // const theme = useTheme();
