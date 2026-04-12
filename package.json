@@ -17,6 +17,7 @@
     "@mui/icons-material": "^7.3.7",
     "@mui/material": "^7.3.7",
     "@mui/material-nextjs": "^7.3.7",
+    "@reduxjs/toolkit": "^2.11.2",
     "@stylistic/eslint-plugin": "^5.7.1",
     "@stylistic/eslint-plugin-js": "^4.4.1",
     "clsx": "^2.1.1",
@@ -28,6 +29,7 @@
     "proptypes": "^1.1.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-redux": "^9.2.0",
     "stylis": "^4.3.6",
     "stylis-plugin-rtl": "^2.1.1",
     "tss-react": "^4.9.20"

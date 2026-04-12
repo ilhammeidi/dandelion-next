@@ -11,6 +11,7 @@ import Footer from '@/components/Footer/Footer';
 import DarkModeSwitch from '@/components/Header/DarkModeSwitch';
 import ColorPaletteSwitch from '@/components/Header/ColorPaletteSwitch';
 import LangSwitch from '@/components/Header/LangSwitch';
+import Counter from '@/components/Counter/Counter';
 import styles from '../page.module.css';
 
 export default function Home() {
@@ -65,6 +66,7 @@ export default function Home() {
               center.
             </p>
           </div>
+          <Counter />
           <div className={styles.ctas}>
             <a
               className={styles.primary}
