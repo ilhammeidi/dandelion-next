@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ThemeWrapper from '@/theme/ThemeWrapper';
-import StoreProvider from '@/lib/store/store';
+import StoreProvider from '@/lib/store/StoreProvider';
 import { Geist, Geist_Mono } from 'next/font/google';
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
