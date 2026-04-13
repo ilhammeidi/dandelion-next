@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import Alert from '@mui/material/Alert';
+import CheckIcon from '@mui/icons-material/Check';
 import clsx from 'clsx';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
@@ -29,6 +31,9 @@ function Footer() {
   return (
     <Container maxWidth="lg" component="footer" className={clsx(classes.footer, classes.secondClass)}>
       <h2>Hello Footer</h2>
+      <Alert icon={<CheckIcon fontSize="inherit" className={classes.checkIcon} />} severity="success">
+        Here is a gentle confirmation that your action was successful.
+      </Alert>
       {isMobile && (
         <div>
           <Box p={4}>

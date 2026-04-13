@@ -1,13 +1,21 @@
 'use client';
 import { createTheme } from '@mui/material/styles';
 
-const theme = createTheme({
-  colorSchemes: {
-    dark: true,
-  },
-  typography: {
-    fontFamily: 'var(--font-roboto)',
-  },
-});
+export function getTheme(mode, palette) {
+  return createTheme({
+    direction: 'rtl',
+    palette: {
+      mode,
+      ...(mode === 'dark' && {
+        background: {
+          default: '#121212',
+          paper: '#1e1e1e',
+        },
+      }),
+      ...palette
+    }
+  });
+}
 
-export default theme;
+
+// export default theme;

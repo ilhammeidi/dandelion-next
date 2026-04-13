@@ -1,29 +1,25 @@
 'use client';
 
-import React, { useCallback } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { useColorScheme } from '@mui/material/styles';
+import {useTranslations} from 'next-intl';
+import Alert from '@mui/material/Alert';
+import CheckIcon from '@mui/icons-material/Check';
 import Container from '@mui/material/Container';
+import TextField from '@mui/material/TextField';
 import Footer from '@/components/Footer/Footer';
-import styles from './page.module.css';
+import DarkModeSwitch from '@/components/Header/DarkModeSwitch';
+import ColorPaletteSwitch from '@/components/Header/ColorPaletteSwitch';
+import LangSwitch from '@/components/Header/LangSwitch';
+import Counter from '@/components/Counter/Counter';
+import styles from '../page.module.css';
 
 export default function Home() {
+  const t = useTranslations('HomePage');
+
   function handleClick() { 
     console.log('Tombol telah diklik2');
   };
-
-  const { mode, setMode } = useColorScheme();
-  
-  const toggleDarkTheme = useCallback(() => {
-    if(mode){
-      const currMode = mode === 'dark' ? 'light' : 'dark';
-      setMode(currMode);
-    }
-  },[mode, setMode]);
-
-  // function setupDarkModeToggle() {
-  //   setMode(mode === 'light' ? 'dark' : 'light');
-  // }
 
   return (
     <div className={styles.page}>
@@ -38,13 +34,18 @@ export default function Home() {
             priority
           />
           <div className={styles.intro}>
+            <h1>{t('title')}</h1>
+            <LangSwitch />
             <h1>Kocak To get started, edit the page.js file.</h1>
+            <TextField label="Enter text" variant="outlined" fullWidth />
+            <Alert icon={<CheckIcon fontSize="inherit" className={styles.checkIcon} />} severity="success">
+              Here is a gentle confirmation that your action was successful.
+            </Alert>
             <button onClick={() => handleClick()}>
               Klik Saya
             </button>
-            <button onClick={() => toggleDarkTheme()}>
-              Dark Mode Togglexxx
-            </button>
+            <DarkModeSwitch />
+            <ColorPaletteSwitch />
             <p>
               Looking for a starting point or more instructions? Head over to{' '}
               <a
@@ -65,6 +66,7 @@ export default function Home() {
               center.
             </p>
           </div>
+          <Counter />
           <div className={styles.ctas}>
             <a
               className={styles.primary}
