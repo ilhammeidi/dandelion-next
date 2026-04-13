@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ThemeWrapper from '@/theme/ThemeWrapper';
-import StoreProvider from '@/lib/store/store';
+import StoreProvider from '@/lib/store/StoreProvider';
 import { Geist, Geist_Mono } from 'next/font/google';
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
@@ -27,15 +27,15 @@ export default async function RootLayout({ children, params }) {
 
   return (
     <html lang='en' dir="rtl">
-      <StoreProvider>
-        <ThemeWrapper>
-          <body dir="rtl" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body dir="rtl" className={`${geistSans.variable} ${geistMono.variable}`}>
+        <StoreProvider>
+          <ThemeWrapper>
             <NextIntlClientProvider>
               {children}
             </NextIntlClientProvider>
-          </body>
-        </ThemeWrapper>
-      </StoreProvider>
+          </ThemeWrapper>
+        </StoreProvider>
+      </body>
     </html>
   );
 }
