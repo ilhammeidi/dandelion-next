@@ -27,15 +27,15 @@ export default async function RootLayout({ children, params }) {
 
   return (
     <html lang='en' dir="rtl">
-      <StoreProvider>
-        <ThemeWrapper>
-          <body dir="rtl" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body dir="rtl" className={`${geistSans.variable} ${geistMono.variable}`}>
+        <StoreProvider>
+          <ThemeWrapper>
             <NextIntlClientProvider>
               {children}
             </NextIntlClientProvider>
-          </body>
-        </ThemeWrapper>
-      </StoreProvider>
+          </ThemeWrapper>
+        </StoreProvider>
+      </body>
     </html>
   );
 }

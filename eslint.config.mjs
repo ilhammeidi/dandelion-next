@@ -33,10 +33,7 @@ const eslintConfig = defineConfig([
         "error",
         2
       ],
-      "linebreak-style": [
-        "error",
-        "unix"
-      ],
+      "linebreak-style": 0,
       "quotes": [
         "error",
         "single"
