@@ -1,21 +1,24 @@
 'use client';
 
-import React from 'react';
-import {useRouter, usePathname, Link} from '@/i18n/navigation'; // Adjust the import path
+import React, { useTransition } from 'react';
+import {useRouter, Link} from '@/i18n/navigation'; // Adjust the import path
+import { setUserLocale } from '@/i18n/setLocale';
  
 export default function LocaleSwitcher() {
   const router = useRouter();
-  const pathname = usePathname();
+  const [isPending, startTransition] = useTransition();
  
   const onLocaleChange = (event) => {
     const nextLocale = event.target.value;
     // router.replace navigates to the new locale while preserving the current pathname
-    router.replace(pathname, {locale: nextLocale});
+    startTransition(() => {
+      setUserLocale(nextLocale);
+    });
   };
  
   return (
     <div>
-      <select onChange={onLocaleChange} defaultValue={router.locale}>
+      <select disabled={isPending} onChange={onLocaleChange} defaultValue={router.locale}>
         {['en', 'de', 'ar'].map((locale) => ( // List your supported locales
           <option key={locale} value={locale}>
             {locale.toUpperCase()}

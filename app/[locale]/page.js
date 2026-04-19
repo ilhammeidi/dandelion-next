@@ -12,7 +12,7 @@ import DarkModeSwitch from '@/components/Header/DarkModeSwitch';
 import ColorPaletteSwitch from '@/components/Header/ColorPaletteSwitch';
 import LangSwitch from '@/components/Header/LangSwitch';
 import Counter from '@/components/Counter/Counter';
-import styles from '../page.module.css';
+import styles from '@/app/page.module.css';
 
 export default function Home() {
   const t = useTranslations('HomePage');
